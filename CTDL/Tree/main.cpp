@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 // Kieu cua cac nut tren cay (chua thong tin ve mot sinh vien).
 struct Node
 {
@@ -77,12 +78,49 @@ void treePreOrderTraveral(Node *& t)
     // Print current node's maSV
     std::cout << t->maSV << " " << t->hoTen<<" -> ";
 }
+void treeInOrderTraveral(Node *& t)
+{
+    if (t == NULL)
+        return;
+    
+    // Traverse left subtree
+    treePostOrderTraveral(t->left);
 
+    // Print current node's maSV
+    std::cout << t->maSV << " " << t->hoTen<<" -> ";
+    
+    // Traverse right subtree
+    treePostOrderTraveral(t->right);
+    
+}
 /*void PostOrderTraveral(SVTree & tree)
 {
 	treePostOrderTraveral(tree.root);
 }*/
 
+int treeCountNode(Node *& t)
+{
+	if(t == NULL)
+		return 0;
+	else 
+		return 1 + treeCountNode(t->left) + treeCountNode(t->right);
+}
+
+int treeCountLeafNode(Node *& t)
+{
+	if(t == NULL)
+		return 0;
+	int isFull = (t->left == NULL && t->right == NULL) ? 1 : 0;
+	return isFull + treeCountLeafNode(t->left) + treeCountLeafNode(t->right);
+}
+
+int treeCountFullNode(Node *& t)
+{
+	if(t == NULL)
+		return 0;
+	int isFull = (t->left != NULL && t->right != NULL) ? 1 : 0;
+	return isFull + treeCountFullNode(t->left) + treeCountFullNode(t->right);
+}
 // YEU CAU THUC HANH
 //   1. Khai bao cac ham duyet cay theo thu tu truoc, giua va sau
 //   2. Khai bao cac ham dem so nut, so nut la va so nut co du 2 con
@@ -100,11 +138,11 @@ int main()
 	
 	// YEU CAU THUC HANH
 	//   1. Viet code chen 7-8 sinh vien vao cay (ve cay sau khi chen ra giay)
-	treeInsert(tree, 4, "Trinh Vinh Khanh");
+	treeInsert(tree, 4, "Nguyen Quoc Tien");
 	treeInsert(tree, 5, "Nguyen Quoc Porn");
 	treeInsert(tree, 8, "Nguyen Quoc Gay");
-	treeInsert(tree, 2, "Nguyen Quang Huy");
-	treeInsert(tree, 6, "Niggar");
+	treeInsert(tree, 2, "Tien Gay");
+	treeInsert(tree, 6, "Nigga");
 	treeInsert(tree, 3, "Tien Porn");
 	treeInsert(tree, 9, "Tien Xem Porn");
 	/*
@@ -131,11 +169,23 @@ int main()
 	std::cout<<"Duyet Theo Thu Tu Sau:"<<std::endl;
 	treePreOrderTraveral(tree.root);
 	std::cout<<std::endl;
-	
+	std::cout<<"Duyet Tu Giua:"<<std::endl;
+	treeInOrderTraveral(tree.root);
+	std::cout<<std::endl;
+
 	//   4. Viet code dem so nut, so nut la va so nut co du 2 con
+	std::cout<<"So Nut Con: "<<treeCountNode(tree.root)<<std::endl;
+	std::cout<<"So Nut La Con: "<<treeCountLeafNode(tree.root)<<std::endl;
+	std::cout<<"So Nut Con Day Du: "<<treeCountFullNode(tree.root)<<std::endl;
+	//treeCountFullNode(tree.root);
+	std::cout<<std::endl;
+
     //   5. Viet code duyet cay theo thu thu muc
+
     //   6. Viet code in ra cac gia tri tren cay nam trong doan [k1; k2]
-    //   7. Viet code xoa rong cay
+    
+	//   7. Viet code xoa rong cay
+	
 	//   8. Viet code kiem tra xem cay da rong hay chua
 	
 	// VIET CODE CUA BAN O DAY
