@@ -1,3 +1,6 @@
+//
+//https://oj.vnoi.info/problem/olp_kc23_tseq
+
 #include <bits/stdc++.h>
 
 class Solution{
