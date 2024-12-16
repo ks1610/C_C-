@@ -226,13 +226,13 @@ int main()
 	
 	// YEU CAU THUC HANH
 	//   1. Viet code chen 7-8 sinh vien vao cay (ve cay sau khi chen ra giay)
-	treeInsert(tree, 4, "Nguyen Quoc Tien");
-	treeInsert(tree, 5, "Nguyen Quoc Porn");
-	treeInsert(tree, 8, "Nguyen Quoc Gay");
-	treeInsert(tree, 2, "Tien Gay");
-	treeInsert(tree, 6, "Nigga");
-	treeInsert(tree, 3, "Tien Porn");
-	treeInsert(tree, 9, "Tien Xem Porn");
+	treeInsert(tree, 4, "Nguyen Van A");
+	treeInsert(tree, 5, "Nguyen Van B");
+	treeInsert(tree, 8, "Nguyen Van C");
+	treeInsert(tree, 2, "Nguyen Van D");
+	treeInsert(tree, 6, "Nguyen Van E");
+	treeInsert(tree, 3, "Nguyen Van G");
+	treeInsert(tree, 9, "Nguyen Van N");
 	/*
 		  4
         /   \
