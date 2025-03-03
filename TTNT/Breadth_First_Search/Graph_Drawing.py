@@ -22,8 +22,8 @@ for u, v, h, k in edges:
 # Manually set node positions to match the given layout
 pos = {
     'A': (1, 5), 'F': (4, 5), 'G': (6, 5),
-    'D': (1, 3), 'E': (3, 3), 'H': (0, 1),
-    'C': (1, 0), 'K': (4, 1), 'I': (5, 2),
+    'D': (1, 3), 'E': (3, 3), 'H': (1, 0),
+    'C': (0, 1), 'K': (4, 1), 'I': (5, 2),
     'B': (6, 0)
 }
 
